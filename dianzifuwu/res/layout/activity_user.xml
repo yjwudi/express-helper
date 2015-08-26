@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/requestBtn"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="134dp"
+        android:text="I have request" />
+
+    <Button
+        android:id="@+id/serviceBtn"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/requestBtn"
+        android:layout_below="@+id/requestBtn"
+        android:layout_marginTop="82dp"
+        android:text="I want to serve" />
+
+</RelativeLayout>

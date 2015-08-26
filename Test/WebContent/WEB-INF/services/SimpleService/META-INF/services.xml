@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.4  Built on : Apr 26, 2008 (06:24:30 EDT) -->
+<serviceGroup>
+    <service name="SimpleService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="com.ttdev.ss.SimpleServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">com.ttdev.ss.SimpleServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="concat" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://ttdev.com/ss/">
+            <actionMapping>http://ttdev.com/ss/concat</actionMapping>
+            <outputActionMapping>http://ttdev.com/ss/SimpleService/concatResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

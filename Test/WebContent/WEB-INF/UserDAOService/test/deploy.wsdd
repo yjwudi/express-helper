@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UserDAOService WSDL service -->
+
+  <service name="UserDAO" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://test"/>
+      <parameter name="wsdlServiceElement" value="UserDAOService"/>
+      <parameter name="schemaQualified" value="http://test"/>
+      <parameter name="wsdlServicePort" value="UserDAO"/>
+      <parameter name="className" value="test.UserDAO"/>
+      <parameter name="wsdlPortType" value="UserDAO"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://test" xmlns:retNS="http://test" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="login" qname="operNS:Login" returnQName="retNS:LoginReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://test" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://test" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://test" xmlns:retNS="http://test" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registerUser" qname="operNS:RegisterUser" returnQName="retNS:RegisterUserReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://test" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://test" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://test" xmlns:retNS="http://test" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="checkUser" qname="operNS:CheckUser" returnQName="retNS:CheckUserReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://test" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="checkUser registerUser login"/>
+
+  </service>
+</deployment>

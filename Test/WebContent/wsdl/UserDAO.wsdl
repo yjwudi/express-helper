@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://test" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://test" xmlns:intf="http://test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://test" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="Login">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="LoginResponse">
+    <complexType>
+     <sequence>
+      <element name="LoginReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="RegisterUser">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="RegisterUserResponse">
+    <complexType>
+     <sequence>
+      <element name="RegisterUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="CheckUser">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="CheckUserResponse">
+    <complexType>
+     <sequence>
+      <element name="CheckUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="LoginRequest">
+
+      <wsdl:part element="impl:Login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="CheckUserRequest">
+
+      <wsdl:part element="impl:CheckUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="RegisterUserResponse">
+
+      <wsdl:part element="impl:RegisterUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="CheckUserResponse">
+
+      <wsdl:part element="impl:CheckUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="LoginResponse">
+
+      <wsdl:part element="impl:LoginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="RegisterUserRequest">
+
+      <wsdl:part element="impl:RegisterUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UserDAO">
+
+      <wsdl:operation name="Login">
+
+         <wsdl:input message="impl:LoginRequest" name="LoginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:LoginResponse" name="LoginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RegisterUser">
+
+         <wsdl:input message="impl:RegisterUserRequest" name="RegisterUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:RegisterUserResponse" name="RegisterUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="CheckUser">
+
+         <wsdl:input message="impl:CheckUserRequest" name="CheckUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:CheckUserResponse" name="CheckUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UserDAOSoapBinding" type="impl:UserDAO">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="Login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="LoginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="LoginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RegisterUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="RegisterUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="RegisterUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="CheckUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="CheckUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="CheckUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UserDAOService">
+
+      <wsdl:port binding="impl:UserDAOSoapBinding" name="UserDAO">
+
+         <wsdlsoap:address location="http://localhost:8080/Test/services/UserDAO"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
